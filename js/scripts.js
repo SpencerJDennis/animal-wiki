@@ -3,20 +3,32 @@ window.onload = function() {
   form.onsubmit = function(event) {
     event.preventDefault();
 
-    let drinkMenu = document.getElementById("drinks");
-    drinkMenu.setAttribute("class", "hidden");
-    let under21Message = document.getElementById("under-21");
-    under21Message.setAttribute("class", "hidden");
+    let turtle = document.getElementById("turtles");
+    turtle.setAttribute("class", "hidden");
 
-    const age = parseInt(document.querySelector("input#age").value);
+    let tiger = document.getElementById("tigers");
+    tiger.setAttribute("class", "hidden");
 
-    if (age > 21) {  // updated to check if age is greater than 21
-      drinkMenu.removeAttribute("class");
-    } else if (age === 21) { // new else if statement
-      window.alert("Have some fun, you’re just 21!");
-      drinkMenu.removeAttribute("class");
-    } else {
-      under21Message.removeAttribute("class");
+    let snake = document.getElementById("snakes");
+    snake.setAttribute("class", "hidden");
+    
+
+    const animal = (document.querySelector("input#animal").value);
+
+    if (animal === "turtle") {
+      turtle.removeAttribute("class");
+    } 
+    
+    else if (animal === "tiger") {
+      tiger.removeAttribute("class");
+    }  
+    
+    else if (animal === "snake") { // new else if statement
+      snake.removeAttribute("class");
+    } 
+    
+    else {
+      alert("Please enter one of the available animals")
     }
   };
 };
